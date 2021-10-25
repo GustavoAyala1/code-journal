@@ -18,8 +18,46 @@
   <body>
     <header></header>
     <main>
-      <div data-view="entry-form">
-        <form action="#" class="form"></form>
+      <div data-view="entry-form" class="container">
+        <div class="rowCont">
+          <form action="#" class="form column-full column-half">
+            <div class="formJournal row">
+              <h2>Code Journal</h2>
+            </div>
+            <div class="row">
+              <h2>New Entry</h2>
+            </div>
+            <div class="row">
+              <div class="halfColumn fullColumn">
+                <img
+                  src="images/placeholder-image-square.jpg"
+                  alt="placeholder Image"
+                />
+              </div>
+              <div class="halfColumn fullColumn">
+                <div class="row">
+                  <label for="formTitle">Title</label>
+                </div>
+                <div class="row">
+                  <input type="text" id="formTitle" required />
+                </div>
+                <div class="row">
+                  <label for="photoUrl">Photo URL</label>
+                </div>
+                <div class="row">
+                  <input type="text" required />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <label for="notes">Notes</label>
+            </div>
+            <div class="row">
+              <textarea name="notes" id="notes" cols="30" rows="5"></textarea>
+            </div>
+            <button>SAVE</button>
+          </form>
+        </div>
       </div>
     </main>
     <script src="js/data.js"></script>
