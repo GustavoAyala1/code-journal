@@ -4,6 +4,11 @@
 const $form = document.querySelector('form');
 const $image = document.querySelector('.image');
 
+// const previousEntryJson = localStorage.getItem("entry-local-storage");
+// if (previousEntryJson !== null) {
+//   data = JSON.parse(previousEntryJson);
+// }
+
 const handleEntry = event => {
   event.preventDefault();
   const target = event.target;
@@ -28,6 +33,8 @@ const handleSubmit = event => {
 
   data.entries.nextEntryId++;
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  const entryJson = JSON.stringify(data);
+  localStorage.setItem('entry-local-storage', entryJson);
   $form.reset();
 };
 
