@@ -52,6 +52,15 @@
   margin: 0;
 }
 
+.codeJournal {
+  padding: 0;
+}
+
+.input:focus,
+.notes:focus {
+  outline: 2px solid rgb(87, 43, 130);
+}
+
 @media screen and (min-width: 768px) {
   .fullColumn {
     flex-basis: 100%;

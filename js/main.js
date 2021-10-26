@@ -21,9 +21,10 @@ const handleSubmit = event => {
   //   title: $form.title.value,
   //   photo: $form.photo.value,
   //   notes: $form.notes.value,
-  //   nextEntryId: 1,
   // };
-  // console.log(entryObj);
+  // data = { ...entryObj };
+  // console.log(data);
+  // data.nextEntryId++;
   $form.reset();
 };
 $form.addEventListener('input', handleEntry);
