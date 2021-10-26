@@ -27,8 +27,6 @@ const handleSubmit = event => {
   data.entries.unshift(entryObj);
 
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
-  // const entryJson = JSON.stringify(data);
-  // localStorage.setItem("entry-local-storage", entryJson);
   $form.reset();
 };
 
