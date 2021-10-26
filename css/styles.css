@@ -1,6 +1,5 @@
 .halfColumn {
   flex-basis: 50%;
-  width: 100%;
 }
 
 .container img {
@@ -18,10 +17,6 @@
 
 .row textarea {
   width: 100%;
-}
-
-.row {
-  margin: 0;
 }
 
 .row label {
@@ -51,10 +46,6 @@
   margin: 0 auto;
 }
 
-.codeJournal {
-  padding: 0;
-}
-
 .input:focus,
 .notes:focus {
   outline: 2px solid rgb(87, 43, 130);
@@ -63,16 +54,6 @@
 @media screen and (min-width: 768px) {
   .fullColumn {
     flex-basis: 100%;
-  }
-
-  .row input {
-    margin-top: 0;
-  }
-
-  .rowCont {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .formJournal {
