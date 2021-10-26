@@ -4,11 +4,6 @@
 const $form = document.querySelector('form');
 const $image = document.querySelector('.image');
 
-// const previousEntryJson = localStorage.getItem("entry-local-storage");
-// if (previousEntryJson !== null) {
-//   data = JSON.parse(previousEntryJson);
-// }
-
 const handleEntry = event => {
   event.preventDefault();
   const target = event.target;
@@ -22,21 +17,26 @@ const handleEntry = event => {
 
 const handleSubmit = event => {
   event.preventDefault();
-  const entryObj = {
+  var entryObj = {
     title: $form.title.value,
     photo: $form.photo.value,
     notes: $form.notes.value,
-    nextEntryId: 0
+    nextEntryId: data.nextEntryId++
   };
 
-  data.entries = { ...entryObj };
+  data.entries.unshift(entryObj);
 
-  data.entries.nextEntryId++;
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  // const entryJson = JSON.stringify(data);
+  // localStorage.setItem("entry-local-storage", entryJson);
+  $form.reset();
+};
+
+const handleUnload = event => {
   const entryJson = JSON.stringify(data);
   localStorage.setItem('entry-local-storage', entryJson);
-  $form.reset();
 };
 
 $form.addEventListener('input', handleEntry);
 $form.addEventListener('submit', handleSubmit);
+window.addEventListener('beforeunload', handleUnload);
