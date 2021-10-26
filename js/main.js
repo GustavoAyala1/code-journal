@@ -9,9 +9,22 @@ const handleEntry = event => {
   const target = event.target;
   const value = target.value;
   const type = target.type;
+
   if (type === 'url') {
     $image.setAttribute('src', value);
   }
 };
 
+const handleSubmit = event => {
+  event.preventDefault();
+  // const entryObj = {
+  //   title: $form.title.value,
+  //   photo: $form.photo.value,
+  //   notes: $form.notes.value,
+  //   nextEntryId: 1,
+  // };
+  // console.log(entryObj);
+  $form.reset();
+};
 $form.addEventListener('input', handleEntry);
+$form.addEventListener('submit', handleSubmit);
