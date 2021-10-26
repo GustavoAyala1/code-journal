@@ -25,6 +25,7 @@ const handleSubmit = event => {
   // data = { ...entryObj };
   // console.log(data);
   // data.nextEntryId++;
+  $image.setAttribute('src', '');
   $form.reset();
 };
 $form.addEventListener('input', handleEntry);
