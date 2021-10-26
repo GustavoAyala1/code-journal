@@ -17,16 +17,19 @@ const handleEntry = event => {
 
 const handleSubmit = event => {
   event.preventDefault();
-  // const entryObj = {
-  //   title: $form.title.value,
-  //   photo: $form.photo.value,
-  //   notes: $form.notes.value,
-  // };
-  // data = { ...entryObj };
-  // console.log(data);
-  // data.nextEntryId++;
-  $image.setAttribute('src', '');
+  const entryObj = {
+    title: $form.title.value,
+    photo: $form.photo.value,
+    notes: $form.notes.value,
+    nextEntryId: 0
+  };
+
+  data.entries = { ...entryObj };
+
+  data.entries.nextEntryId++;
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 };
+
 $form.addEventListener('input', handleEntry);
 $form.addEventListener('submit', handleSubmit);
