@@ -16,12 +16,13 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div data-view="entry-form" class="container">
+    <div data-view="entry-form" class="container" id="entriesForm">
       <header>
         <div class="container">
           <div class="row formJournal">
             <div class="column-full codeJournal">
               <h2>Code Journal</h2>
+              <h3><a href="#ulContainer">Entries</a></h3>
             </div>
           </div>
         </div>
@@ -72,31 +73,15 @@
         </div>
       </main>
     </div>
-    <div data-view="entries" class="ulContainer">
-      <ul class="container">
+    <div data-view="entries">
+      <ul class="container" id="ulContainer">
         <li class="row formJournal journal">Code Journal</li>
         <li class="row journal">
           <div class="halfColumn"><p>Entries</p></div>
           <div class="halfColumn">
-            <button type="submit" class="newBtn">NEW</button>
-          </div>
-        </li>
-        <li class="row">
-          <div class="halfColumn fullColumn">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/5/52/Misery_%281990_film_poster%29.png"
-              alt="Misery movie cover"
-              class="image halfColumn fullColumn"
-            />
-          </div>
-          <div class="halfColumn fullColumn">
-            <h2>Misery</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              consequuntur facilis placeat mollitia perspiciatis velit! Id
-              excepturi amet ab odit quod, quidem, quaerat vero voluptate alias
-              quis dolorem fugit cupiditate.
-            </p>
+            <a href="#entriesForm"
+              ><button type="submit" class="newBtn">NEW</button></a
+            >
           </div>
         </li>
       </ul>

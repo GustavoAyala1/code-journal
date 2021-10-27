@@ -6,6 +6,19 @@ img {
   width: 90%;
 }
 
+a {
+  text-decoration: none;
+}
+
+.codeJournal {
+  display: flex;
+}
+
+.codeJournal a {
+  color: white;
+  margin-left: 20px;
+}
+
 .container {
   background-color: rgba(229, 229, 229);
 }
