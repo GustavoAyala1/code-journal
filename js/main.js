@@ -3,6 +3,7 @@
 
 const $form = document.querySelector('form');
 const $image = document.querySelector('.image');
+const $ulContainer = document.querySelector('.ulContainer');
 
 const handleEntry = event => {
   event.preventDefault();
@@ -30,7 +31,7 @@ const handleSubmit = event => {
   $form.reset();
 };
 
-const createEntry = event => {
+const createEntry = entry => {
   const ulCont = document.createElement('ul');
   const firstLi = document.createElement('li');
   const secondLi = document.createElement('li');
@@ -43,7 +44,7 @@ const createEntry = event => {
   // last li with image and h2 and p
   const lastLi = document.createElement('li');
   const imgDiv = document.createElement('div');
-  const img = document.createElement('div');
+  const img = document.createElement('img');
 
   const hAndPDiv = document.createElement('div');
   const hElement = document.createElement('h2');
@@ -59,17 +60,14 @@ const createEntry = event => {
   lastLi.setAttribute('class', 'row');
   imgDiv.setAttribute('class', 'halfColumn fullColumn');
   img.setAttribute('class', 'image halfColumn fullColumn');
-  img.setAttribute(
-    'src',
-    'https://upload.wikimedia.org/wikipedia/en/5/52/Misery_%281990_film_poster%29.png'
-  );
+  img.setAttribute('src', `${entry.photo}`);
   hAndPDiv.setAttribute('class', 'halfColumn fullColumn');
 
   firstLi.textContent = 'Code Journal';
   entriesP.textContent = 'Entries';
   saveBtn.textContent = 'NEW';
-  hElement.textContent = 'Misery';
-  pElement.textContent = 'lorem ipsum';
+  hElement.textContent = entry.title;
+  pElement.textContent = entry.notes;
 
   ulCont.appendChild(firstLi);
   ulCont.appendChild(secondLi);
@@ -87,9 +85,15 @@ const createEntry = event => {
   return ulCont;
 };
 
-createEntry();
+const handleCreation = () => {
+  for (let i = 0; i < data.entries.length; i++) {
+    $ulContainer.appendChild(createEntry(data.entries[i]));
+  }
+};
+
 $form.addEventListener('input', handleEntry);
 $form.addEventListener('submit', handleSubmit);
+window.addEventListener('DOMContentLoaded', handleCreation);
 
 /* <ul class="container">
     <li class="row formJournal journal">Code Journal</li>
