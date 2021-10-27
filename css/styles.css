@@ -2,8 +2,8 @@
   flex-basis: 50%;
 }
 
-.container img {
-  width: 100%;
+img {
+  width: 90%;
 }
 
 .container {
@@ -28,7 +28,7 @@
   height: 30px;
 }
 
-.container button {
+.saveBtn {
   background-color: rgb(87, 43, 130);
   color: white;
   position: relative;
@@ -51,6 +51,27 @@
   outline: 2px solid rgb(87, 43, 130);
 }
 
+li {
+  list-style: none;
+}
+
+.journal {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.newBtn {
+  background-color: rgb(87, 43, 130);
+  color: white;
+  height: 30px;
+  width: 60px;
+  border-radius: 5px;
+  position: relative;
+  left: 70%;
+}
+
 @media screen and (min-width: 768px) {
   .fullColumn {
     flex-basis: 100%;
@@ -58,5 +79,18 @@
 
   .formJournal {
     width: 50%;
+  }
+
+  ul {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .journal {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
   }
 }

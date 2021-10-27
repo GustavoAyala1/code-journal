@@ -29,7 +29,7 @@
       <main>
         <div class="rowCont">
           <form action="#" class="form column-full column-half">
-            <div class="row codeJournal">
+            <div class="row">
               <h2>New Entry</h2>
             </div>
             <div class="row">
@@ -67,13 +67,30 @@
                 class="notes"
               ></textarea>
             </div>
-            <button type="submit">SAVE</button>
+            <button type="submit" class="saveBtn">SAVE</button>
           </form>
         </div>
       </main>
     </div>
     <div data-view="entry-form" class="container">
-      <ul></ul>
+      <ul class="container">
+        <li >
+          <li class="row formJournal journal">Code Journal</li>
+          <li class="row journal">
+            <div class="halfColumn"><p>Entries</p></div>
+            <div class="halfColumn"><button type="submit" class="newBtn">NEW</button></div>
+          </li>
+          <li class="row">
+            <div class="halfColumn fullColumn">
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/52/Misery_%281990_film_poster%29.png" alt="Misery movie cover" class="image halfColumn fullColumn">
+            </div>
+            <div class="halfColumn fullColumn">
+              <h2>Misery</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur facilis placeat mollitia perspiciatis velit! Id excepturi amet ab odit quod, quidem, quaerat vero voluptate alias quis dolorem fugit cupiditate.</p>
+            </div>
+          </li>
+        </li>
+      </ul>
     </div>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
