@@ -30,11 +30,5 @@ const handleSubmit = event => {
   $form.reset();
 };
 
-const handleUnload = event => {
-  const entryJson = JSON.stringify(data);
-  localStorage.setItem('entry-local-storage', entryJson);
-};
-
 $form.addEventListener('input', handleEntry);
 $form.addEventListener('submit', handleSubmit);
-window.addEventListener('beforeunload', handleUnload);
