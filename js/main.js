@@ -7,10 +7,14 @@ const $ulContainer = document.querySelector('#ulContainer');
 const $newBtn = document.querySelectorAll('.newBtn');
 const $hiddenDiv = document.querySelector('.hiddenDiv');
 const $noEntries = document.querySelector('.noEntries');
+const $hiddenEntries = document.querySelector('.hiddenEntry');
+const $hiddenNewEntries = document.querySelector('.hiddenNewEntry');
 
 const removeHidden = event => {
   $hiddenDiv.classList.toggle('hidden');
   $noEntries.classList.add('hidden');
+  $hiddenEntries.classList.add('hidden');
+  $hiddenNewEntries.classList.remove('hidden');
 };
 
 $newBtn.forEach(button => button.addEventListener('click', removeHidden));
