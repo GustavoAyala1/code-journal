@@ -52,7 +52,9 @@ const createEntry = entry => {
   const img = document.createElement('img');
 
   const hAndPDiv = document.createElement('div');
+  const tAndEDiv = document.createElement('div');
   const hElement = document.createElement('h2');
+  const editBtn = document.createElement('button');
   const pElement = document.createElement('p');
 
   lastLi.setAttribute('class', 'row rowCont');
@@ -60,14 +62,19 @@ const createEntry = entry => {
   img.setAttribute('class', 'image halfColumn fullColumn');
   img.setAttribute('src', `${entry.photo}`);
   hAndPDiv.setAttribute('class', 'halfColumn fullColumn');
+  tAndEDiv.setAttribute('class', 'row editDiv');
+  editBtn.setAttribute('class', 'edit');
 
   hElement.textContent = entry.title;
   pElement.textContent = entry.notes;
+  editBtn.innerHTML = '&#9998';
 
   lastLi.appendChild(imgDiv);
   imgDiv.appendChild(img);
   lastLi.appendChild(hAndPDiv);
-  hAndPDiv.appendChild(hElement);
+  hAndPDiv.appendChild(tAndEDiv);
+  tAndEDiv.appendChild(hElement);
+  tAndEDiv.appendChild(editBtn);
   hAndPDiv.appendChild(pElement);
 
   return lastLi;

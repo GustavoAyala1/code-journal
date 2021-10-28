@@ -118,6 +118,19 @@ div > h4 {
   margin-left: 20px;
 }
 
+.editDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  background-color: rgb(240, 240, 240);
+  border: none;
+  font-size: 18px;
+  color: rgb(87, 43, 130);
+}
+
 @media screen and (min-width: 768px) {
   .fullColumn {
     flex-basis: 100%;
