@@ -64,6 +64,7 @@ const createEntry = entry => {
   hAndPDiv.setAttribute('class', 'halfColumn fullColumn');
   tAndEDiv.setAttribute('class', 'row editDiv');
   editBtn.setAttribute('class', 'edit');
+  editBtn.setAttribute('data-entry-id', entry.nextEntryId);
 
   hElement.textContent = entry.title;
   pElement.textContent = entry.notes;
