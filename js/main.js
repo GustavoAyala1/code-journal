@@ -49,7 +49,7 @@ const createEntry = entry => {
   const hElement = document.createElement('h2');
   const pElement = document.createElement('p');
 
-  lastLi.setAttribute('class', 'row');
+  lastLi.setAttribute('class', 'row rowCont');
   imgDiv.setAttribute('class', 'halfColumn fullColumn');
   img.setAttribute('class', 'image halfColumn fullColumn');
   img.setAttribute('src', `${entry.photo}`);

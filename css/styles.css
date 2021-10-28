@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(229, 229, 229);
+}
+
 .halfColumn {
   flex-basis: 50%;
 }
@@ -20,7 +24,11 @@ a {
 }
 
 .container {
-  background-color: rgba(229, 229, 229);
+  background-color: rgb(240, 240, 240);
+}
+
+.rowCont {
+  padding: 10px;
 }
 
 .form {
@@ -85,6 +93,10 @@ li {
   border-radius: 5px;
   position: relative;
   left: 70%;
+}
+
+.bottomBtn {
+  top: 30%;
 }
 
 .topBtn {
