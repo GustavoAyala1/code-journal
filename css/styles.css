@@ -14,7 +14,13 @@ a {
   text-decoration: none;
 }
 
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .mainCont {
+  background-color: rgb(240, 240, 240);
   width: 100%;
 }
 
@@ -33,7 +39,6 @@ a {
 }
 
 .form {
-  background-color: rgb(240, 240, 240);
   margin-bottom: 20px;
   width: 100%;
   padding: 10px;
@@ -56,7 +61,7 @@ a {
   background-color: rgb(87, 43, 130);
   color: white;
   position: relative;
-  right: -87.5%;
+  right: -87%;
   margin-top: 10px;
   height: 30px;
   width: 60px;
@@ -96,16 +101,17 @@ li {
   left: 70%;
 }
 
-.bottomBtn {
-  top: 30%;
+.topBtn {
+  margin-top: 20px;
 }
 
-.topBtn {
+.bottomBtn {
   margin-top: 20px;
 }
 
 .noEntries {
   text-align: center;
+  background-color: rgba(229, 229, 229);
 }
 
 div > h4 {
@@ -118,7 +124,7 @@ div > h4 {
   }
 
   .formJournal {
-    width: 50%;
+    width: 100%;
   }
 
   ul {
@@ -134,10 +140,14 @@ div > h4 {
     width: 100%;
   }
 
+  .newBtn {
+    left: 68%;
+  }
+
   .topBtn {
     margin-top: 0;
     bottom: 140%;
-    left: 87%;
+    left: 90%;
   }
 
   .rowCont {
@@ -146,6 +156,10 @@ div > h4 {
   }
 
   .mainCont {
+    width: 50%;
+  }
+
+  .container {
     width: 50%;
   }
 }

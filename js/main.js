@@ -10,8 +10,9 @@ const $noEntries = document.querySelector('.noEntries');
 
 const removeHidden = event => {
   $hiddenDiv.classList.toggle('hidden');
-  $noEntries.classList.toggle('hidden');
+  $noEntries.classList.add('hidden');
 };
+
 $newBtn.forEach(button => button.addEventListener('click', removeHidden));
 
 const handleEntry = event => {
@@ -34,6 +35,7 @@ const handleSubmit = event => {
     nextEntryId: data.nextEntryId++
   };
 
+  data.view = 'entries';
   data.entries.unshift(entryObj);
 
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
@@ -68,6 +70,11 @@ const createEntry = entry => {
 };
 
 const handleCreation = () => {
+  if (data.view === 'entries') {
+    $ulContainer.classList.remove('hidden');
+    $hiddenDiv.classList.add('hidden');
+    $noEntries.classList.add('hidden');
+  }
   for (let i = 0; i < data.entries.length; i++) {
     $ulContainer.appendChild(createEntry(data.entries[i]));
   }
