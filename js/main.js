@@ -9,8 +9,8 @@ const $hiddenDiv = document.querySelector('.hiddenDiv');
 const $noEntries = document.querySelector('.noEntries');
 
 const removeHidden = event => {
-  $hiddenDiv.classList.remove('hidden');
-  $noEntries.classList.add('hidden');
+  $hiddenDiv.classList.toggle('hidden');
+  $noEntries.classList.toggle('hidden');
 };
 $newBtn.forEach(button => button.addEventListener('click', removeHidden));
 
