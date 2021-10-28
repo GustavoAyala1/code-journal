@@ -81,6 +81,12 @@ const createEntry = entry => {
   return lastLi;
 };
 
+const handleEdit = event => {
+  // const target = event.target;
+  // const entryId = target.getAttribute("data-entry-id");
+  // console.log(entryId);
+};
+
 const handleCreation = () => {
   if (data.view === 'entries') {
     $ulContainer.classList.remove('hidden');
@@ -95,3 +101,4 @@ const handleCreation = () => {
 $form.addEventListener('input', handleEntry);
 $form.addEventListener('submit', handleSubmit);
 window.addEventListener('DOMContentLoaded', handleCreation);
+$ulContainer.addEventListener('click', handleEdit);
