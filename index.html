@@ -21,17 +21,28 @@
         <div class="row formJournal">
           <div class="column-full codeJournal">
             <h2>Code Journal</h2>
+            <h3><a href="#ulContainer">Entries</a></h3>
+          </div>
+        </div>
+        <div class="row hiddenEntry">
+          <div class="halfColumn fullColumn">
+            <h2 class="newEntry">Entries</h2>
+          </div>
+          <div class="halfColumn fullColumn">
+            <button type="submit" class="newBtn topBtn">NEW</button>
+          </div>
+        </div>
+        <div class="row hiddenNewEntry hidden">
+          <div class="halfColumn fullColumn">
+            <h2 class="newEntry">New Entry</h2>
           </div>
         </div>
       </div>
     </header>
     <main>
-      <div data-view="entry-form" class="container">
-        <div class="rowCont">
+      <div class="mainCont container">
+        <div data-view="entry-form" id="entriesForm" class="hiddenDiv hidden">
           <form action="#" class="form column-full column-half">
-            <div class="row codeJournal">
-              <h2>New Entry</h2>
-            </div>
             <div class="row">
               <div class="halfColumn fullColumn">
                 <img
@@ -55,6 +66,7 @@
                 </div>
               </div>
             </div>
+
             <div class="row">
               <label for="notes">Notes</label>
             </div>
@@ -67,8 +79,14 @@
                 class="notes"
               ></textarea>
             </div>
-            <button type="submit">SAVE</button>
+
+            <button type="submit" class="saveBtn">SAVE</button>
           </form>
+        </div>
+
+        <div data-view="entries">
+          <h3 class="noEntries">No entries have been recorded</h3>
+          <ul class="container form hidden" id="ulContainer"></ul>
         </div>
       </div>
     </main>
