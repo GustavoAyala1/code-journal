@@ -74,8 +74,6 @@ li {
 
 .journal {
   height: 70px;
-  display: flex;
-  align-items: center;
   font-size: 1.3rem;
 }
 
@@ -87,6 +85,14 @@ li {
   border-radius: 5px;
   position: relative;
   left: 70%;
+}
+
+.topBtn {
+  margin-top: 20px;
+}
+
+.noEntries {
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -109,5 +115,11 @@ li {
 
   img {
     width: 100%;
+  }
+
+  .topBtn {
+    margin-top: 0;
+    bottom: 140%;
+    left: 87%;
   }
 }

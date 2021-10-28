@@ -4,6 +4,15 @@
 const $form = document.querySelector('form');
 const $image = document.querySelector('.image');
 const $ulContainer = document.querySelector('#ulContainer');
+const $newBtn = document.querySelectorAll('.newBtn');
+const $hiddenDiv = document.querySelector('.hiddenDiv');
+const $noEntries = document.querySelector('.noEntries');
+
+const removeHidden = event => {
+  $hiddenDiv.classList.remove('hidden');
+  $noEntries.classList.add('hidden');
+};
+$newBtn.forEach(button => button.addEventListener('click', removeHidden));
 
 const handleEntry = event => {
   event.preventDefault();

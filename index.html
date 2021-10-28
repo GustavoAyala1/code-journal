@@ -16,59 +16,67 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div data-view="entry-form" class="container" id="entriesForm">
+    <div data-view="entry-form" id="entriesForm">
       <header>
-        <div class="container">
-          <div class="row formJournal">
-            <div class="column-full codeJournal">
-              <h2>Code Journal</h2>
-              <h3><a href="#ulContainer">Entries</a></h3>
-            </div>
+        <div class="row formJournal container">
+          <div class="column-full codeJournal">
+            <h2>Code Journal</h2>
+            <h3><a href="#ulContainer">Entries</a></h3>
           </div>
         </div>
       </header>
       <main>
-        <div class="rowCont">
+        <div class="rowCont container">
           <form action="#" class="form column-full column-half">
             <div class="row">
-              <h2>New Entry</h2>
-            </div>
-            <div class="row">
               <div class="halfColumn fullColumn">
-                <img
-                  src="images/placeholder-image-square.jpg"
-                  alt="placeholder Image"
-                  class="image"
-                />
+                <h2>New Entry</h2>
               </div>
               <div class="halfColumn fullColumn">
-                <div class="row">
-                  <label for="formTitle">Title</label>
-                </div>
-                <div class="row">
-                  <input type="text" id="title" name="title" required />
-                </div>
-                <div class="row">
-                  <label for="photoUrl">Photo URL</label>
-                </div>
-                <div class="row">
-                  <input type="url" id="photoUrl" name="photo" required />
-                </div>
+                <button type="submit" class="newBtn topBtn">NEW</button>
               </div>
             </div>
-            <div class="row">
-              <label for="notes">Notes</label>
+            <div class="hiddenDiv hidden">
+              <div class="row">
+                <div class="halfColumn fullColumn">
+                  <img
+                    src="images/placeholder-image-square.jpg"
+                    alt="placeholder Image"
+                    class="image"
+                  />
+                </div>
+                <div class="halfColumn fullColumn">
+                  <div class="row">
+                    <label for="formTitle">Title</label>
+                  </div>
+                  <div class="row">
+                    <input type="text" id="title" name="title" required />
+                  </div>
+                  <div class="row">
+                    <label for="photoUrl">Photo URL</label>
+                  </div>
+                  <div class="row">
+                    <input type="url" id="photoUrl" name="photo" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <label for="notes">Notes</label>
+              </div>
+              <div class="row">
+                <textarea
+                  name="notes"
+                  id="notes"
+                  cols="30"
+                  rows="5"
+                  class="notes"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="saveBtn">SAVE</button>
             </div>
-            <div class="row">
-              <textarea
-                name="notes"
-                id="notes"
-                cols="30"
-                rows="5"
-                class="notes"
-              ></textarea>
-            </div>
-            <button type="submit" class="saveBtn">SAVE</button>
+            <h3 class="noEntries">No entries have been recorded</h3>
           </form>
         </div>
       </main>
