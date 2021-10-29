@@ -84,10 +84,17 @@ const createEntry = entry => {
 const handleEdit = event => {
   const target = event.target;
   const entryId = target.getAttribute('data-entry-id');
+
   if (entryId !== null) {
     $hiddenDiv.classList.remove('hidden');
-    $hiddenEntries.classList.remove('hidden');
-    $hiddenNewEntries.classList.add('hidden');
+    $hiddenEntries.classList.add('hidden');
+    $hiddenNewEntries.classList.remove('hidden');
+
+    for (let i = 0; i < data.entries.length; i++) {
+      if (+entryId === data.entries[i].nextEntryId) {
+        data.editing = data.entries[i];
+      }
+    }
   }
 };
 
