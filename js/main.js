@@ -93,6 +93,9 @@ const handleEdit = event => {
     for (let i = 0; i < data.entries.length; i++) {
       if (+entryId === data.entries[i].nextEntryId) {
         data.editing = data.entries[i];
+        $form.title.value = data.editing.title;
+        $form.photo.value = data.editing.photo;
+        $form.notes.value = data.editing.notes;
       }
     }
   }
