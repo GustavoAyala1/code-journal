@@ -40,8 +40,8 @@ const handleSubmit = event => {
   };
 
   data.view = 'entries';
-  data.entries.unshift(entryObj);
 
+  data.entries.unshift(entryObj);
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 };
@@ -83,9 +83,10 @@ const createEntry = entry => {
 
 const handleEdit = event => {
   const target = event.target;
+
   const entryId = target.getAttribute('data-entry-id');
 
-  if (entryId !== null) {
+  if (entryId) {
     $hiddenDiv.classList.remove('hidden');
     $hiddenEntries.classList.add('hidden');
     $hiddenNewEntries.classList.remove('hidden');
@@ -96,6 +97,8 @@ const handleEdit = event => {
         $form.title.value = data.editing.title;
         $form.photo.value = data.editing.photo;
         $form.notes.value = data.editing.notes;
+        data.entries.splice(i, 1);
+        data.editing = null;
       }
     }
   }
