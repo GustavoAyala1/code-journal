@@ -11,6 +11,7 @@ const $hiddenEntries = document.querySelector('.hiddenEntry');
 const $hiddenNewEntries = document.querySelector('.hiddenNewEntry');
 const $entriesCont = document.querySelector('.entriesCont');
 const $deleteEntry = document.querySelector('.deleteEntry');
+const $modalDelete = document.querySelector('.modal-delete');
 
 const removeHidden = () => {
   $hiddenDiv.classList.remove('hidden');
@@ -141,6 +142,30 @@ const handleCreation = event => {
   }
 };
 
+const handleDelete = event => {
+  const target = event.target;
+  if (target.innerText === 'Delete Entry') {
+    $modalDelete.classList.remove('hidden');
+  }
+};
+
+const confirmDelete = event => {
+  if (event.target.matches('.delete-no')) {
+    $modalDelete.classList.add('hidden');
+  } else if (event.target.matches('.delete-yes')) {
+    const index = data.editing.index;
+    data.entries.splice(index, 1);
+  }
+  $modalDelete.classList.add('hidden');
+  $hiddenDiv.classList.add('hidden');
+  $entriesCont.classList.remove('hidden');
+  $form.reset();
+  removeAllChildNodes($ulContainer);
+  handleCreation();
+};
+
+$modalDelete.addEventListener('click', confirmDelete);
+$form.addEventListener('click', handleDelete);
 $form.addEventListener('input', handleEntry);
 $form.addEventListener('submit', handleSubmit);
 window.addEventListener('DOMContentLoaded', handleCreation);

@@ -17,6 +17,7 @@ a {
 .container {
   width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .mainCont {
@@ -145,6 +146,58 @@ div > h4 {
 .deleteEntry a {
   text-decoration: none;
   color: black;
+}
+
+.modal-delete {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-add-entry {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 300px;
+}
+
+.deleteText {
+  position: relative;
+  left: 5%;
+}
+
+.delete-yes,
+.delete-no {
+  padding: 0.4rem 1rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.delete-yes {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(128, 128, 128, 0.431);
+  cursor: pointer;
+}
+
+.delete-no {
+  right: -201%;
+  background-color: red;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete-header {
+  font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
