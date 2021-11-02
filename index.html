@@ -24,17 +24,17 @@
             <h3><a href="#ulContainer">Entries</a></h3>
           </div>
         </div>
-        <div class="row hiddenEntry">
-          <div class="halfColumn fullColumn">
+        <div class="row">
+          <div class="hiddenEntry halfColumn fullColumn">
             <h2 class="newEntry">Entries</h2>
+          </div>
+          <div class="row hiddenNewEntry hidden">
+            <div class="halfColumn fullColumn">
+              <h2 class="newEntry">New Entry</h2>
+            </div>
           </div>
           <div class="halfColumn fullColumn">
             <button type="submit" class="newBtn topBtn">NEW</button>
-          </div>
-        </div>
-        <div class="row hiddenNewEntry hidden">
-          <div class="halfColumn fullColumn">
-            <h2 class="newEntry">New Entry</h2>
           </div>
         </div>
       </div>
@@ -79,12 +79,18 @@
                 class="notes"
               ></textarea>
             </div>
-
-            <button type="submit" class="saveBtn">SAVE</button>
+            <div class="row bottomForm">
+              <div class="halfColumn fullColumn deleteEntry hidden">
+                <a href="#">Delete Entry</a>
+              </div>
+              <div class="half-column fullColumn">
+                <button type="submit" class="saveBtn">SAVE</button>
+              </div>
+            </div>
           </form>
         </div>
 
-        <div data-view="entries">
+        <div data-view="entries" class="entriesCont">
           <h3 class="noEntries">No entries have been recorded</h3>
           <ul class="container form hidden" id="ulContainer"></ul>
         </div>
