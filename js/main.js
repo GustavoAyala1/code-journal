@@ -9,12 +9,14 @@ const $hiddenDiv = document.querySelector('.hiddenDiv');
 const $noEntries = document.querySelector('.noEntries');
 const $hiddenEntries = document.querySelector('.hiddenEntry');
 const $hiddenNewEntries = document.querySelector('.hiddenNewEntry');
+const $entriesCont = document.querySelector('.entriesCont');
 
-const removeHidden = event => {
-  $hiddenDiv.classList.toggle('hidden');
+const removeHidden = () => {
+  $hiddenDiv.classList.remove('hidden');
   $noEntries.classList.add('hidden');
   $hiddenEntries.classList.add('hidden');
   $hiddenNewEntries.classList.remove('hidden');
+  $entriesCont.classList.add('hidden');
 };
 
 $newBtn.forEach(button => button.addEventListener('click', removeHidden));
@@ -32,19 +34,38 @@ const handleEntry = event => {
 
 const handleSubmit = event => {
   event.preventDefault();
+
   var entryObj = {
     title: $form.title.value,
     photo: $form.photo.value,
-    notes: $form.notes.value,
-    nextEntryId: data.nextEntryId++
+    notes: $form.notes.value
+    // nextEntryId: data.nextEntryId++,
   };
 
   data.view = 'entries';
 
-  data.entries.unshift(entryObj);
+  if (data.editing) {
+    entryObj.nextEntryId = data.editing.nextEntryId;
+    data.entries[data.editing.index] = entryObj;
+    data.editing = null;
+  } else {
+    entryObj.nextEntryId = data.nextEntryId++;
+    data.entries.unshift(entryObj);
+  }
+
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $hiddenDiv.classList.add('hidden');
+  $entriesCont.classList.remove('hidden');
   $form.reset();
+  removeAllChildNodes($ulContainer);
+  handleCreation();
 };
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 
 const createEntry = entry => {
   const lastLi = document.createElement('li');
@@ -54,6 +75,7 @@ const createEntry = entry => {
   const hAndPDiv = document.createElement('div');
   const tAndEDiv = document.createElement('div');
   const hElement = document.createElement('h2');
+  const anchorTag = document.createElement('a');
   const editBtn = document.createElement('button');
   const pElement = document.createElement('p');
 
@@ -63,6 +85,7 @@ const createEntry = entry => {
   img.setAttribute('src', `${entry.photo}`);
   hAndPDiv.setAttribute('class', 'halfColumn fullColumn');
   tAndEDiv.setAttribute('class', 'row editDiv');
+  anchorTag.setAttribute('href', '#entriesForm');
   editBtn.setAttribute('class', 'edit');
   editBtn.setAttribute('data-entry-id', entry.nextEntryId);
 
@@ -75,7 +98,8 @@ const createEntry = entry => {
   lastLi.appendChild(hAndPDiv);
   hAndPDiv.appendChild(tAndEDiv);
   tAndEDiv.appendChild(hElement);
-  tAndEDiv.appendChild(editBtn);
+  anchorTag.appendChild(editBtn);
+  tAndEDiv.appendChild(anchorTag);
   hAndPDiv.appendChild(pElement);
 
   return lastLi;
@@ -94,17 +118,16 @@ const handleEdit = event => {
     for (let i = 0; i < data.entries.length; i++) {
       if (+entryId === data.entries[i].nextEntryId) {
         data.editing = data.entries[i];
+        data.editing.index = i;
         $form.title.value = data.editing.title;
         $form.photo.value = data.editing.photo;
         $form.notes.value = data.editing.notes;
-        data.entries.splice(i, 1);
-        data.editing = null;
       }
     }
   }
 };
 
-const handleCreation = () => {
+const handleCreation = event => {
   if (data.view === 'entries') {
     $ulContainer.classList.remove('hidden');
     $hiddenDiv.classList.add('hidden');
