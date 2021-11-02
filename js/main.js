@@ -10,6 +10,7 @@ const $noEntries = document.querySelector('.noEntries');
 const $hiddenEntries = document.querySelector('.hiddenEntry');
 const $hiddenNewEntries = document.querySelector('.hiddenNewEntry');
 const $entriesCont = document.querySelector('.entriesCont');
+const $deleteEntry = document.querySelector('.deleteEntry');
 
 const removeHidden = () => {
   $hiddenDiv.classList.remove('hidden');
@@ -39,7 +40,6 @@ const handleSubmit = event => {
     title: $form.title.value,
     photo: $form.photo.value,
     notes: $form.notes.value
-    // nextEntryId: data.nextEntryId++,
   };
 
   data.view = 'entries';
@@ -56,6 +56,7 @@ const handleSubmit = event => {
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $hiddenDiv.classList.add('hidden');
   $entriesCont.classList.remove('hidden');
+  $deleteEntry.classList.add('hidden');
   $form.reset();
   removeAllChildNodes($ulContainer);
   handleCreation();
@@ -114,6 +115,8 @@ const handleEdit = event => {
     $hiddenDiv.classList.remove('hidden');
     $hiddenEntries.classList.add('hidden');
     $hiddenNewEntries.classList.remove('hidden');
+    $entriesCont.classList.add('hidden');
+    $deleteEntry.classList.remove('hidden');
 
     for (let i = 0; i < data.entries.length; i++) {
       if (+entryId === data.entries[i].nextEntryId) {

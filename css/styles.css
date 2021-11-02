@@ -131,6 +131,22 @@ div > h4 {
   color: rgb(87, 43, 130);
 }
 
+.bottomForm {
+  display: flex;
+  position: relative;
+}
+
+.deleteEntry {
+  position: absolute;
+  font-size: 20px;
+  top: 15px;
+}
+
+.deleteEntry a {
+  text-decoration: none;
+  color: black;
+}
+
 @media screen and (min-width: 768px) {
   .fullColumn {
     flex-basis: 100%;
